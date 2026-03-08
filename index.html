@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIP Ruwi | Premium Printing Services in Oman</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'manrope': ['Manrope', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            font-family: 'Manrope', sans-serif;
+        }
+        
+        body {
+            background-color: #030303;
+            color: #ffffff;
+        }
+        
+        ::selection {
+            background-color: #84cc16;
+            color: #000000;
+        }
+        
+        .bg-noise {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+        }
+        
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInScale {
+            0% { opacity: 0; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(132, 204, 22, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(132, 204, 22, 0.6); }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        .animate-fade-in-scale {
+            animation: fadeInScale 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+        
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .card-stack-item {
+            opacity: 0.5;
+            transform: scale(0.95);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .card-stack-item.is-active {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .parallax-bg {
+            transform: translateY(0);
+            transition: transform 0.1s linear;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #84cc16 0%, #65a30d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .service-card:hover .service-image {
+            transform: scale(1.05);
+        }
+        
+        .glow-lime {
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-manrope overflow-x-hidden">
+    <!-- Noise Texture Overlay -->
+    <div class="fixed inset-0 bg-noise pointer-events-none z-50"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-40 mix-blend-difference">
+        <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-tighter uppercase text-white">
+                MIP<span class="text-lime-500">.</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#services" class="text-xs font-medium uppercase tracking-widest text-white hover:text-lime-400 transition-colors">Services</a>
+                <a href="#about" class="text-xs font-medium uppercase tracking-widest text-white hover:text-lime-400 transition-colors">About</a>
+                <a href="#portfolio" class="text-xs font-medium uppercase tracking-widest text-white hover:text-lime-400 transition-colors">Portfolio</a>
+                <a href="#contact" class="text-xs font-medium uppercase tracking-widest text-white hover:text-lime-400 transition-colors">Contact</a>
+            </div>
+            <a href="#contact" class="bg-lime-500 text-black px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wider hover:bg-lime-300 transition-all hover:scale-105">
+                Get Quote
+            </a>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center overflow-hidden">
+        <!-- Background Image with Parallax -->
+        <div class="absolute inset-0 parallax-bg" id="heroBg">
+            <img src="https://picsum.photos/seed/printing-press/1920/1080.jpg" alt="Printing Press" class="w-full h-full object-cover opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-t from-#030303 via-transparent to-rgba(3,3,3,0.8)"></div>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-32">
+            <div class="max-w-5xl">
+                <!-- Label -->
+                <div class="opacity-0 animate-fade-in-up">
+                    <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-lime-500/30 bg-lime-500/10 backdrop-blur-sm mb-8">
+                        <span class="w-2 h-2 rounded-full bg-lime-500 animate-pulse"></span>
+                        <span class="text-xs font-semibold uppercase tracking-widest text-lime-400">Premium Printing Services</span>
+                    </span>
+                </div>
+                
+                <!-- Headline -->
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tighter uppercase mb-8 opacity-0 animate-fade-in-up delay-100">
+                    <span class="block">Bringing Your</span>
+                    <span class="block gradient-text">Ideas to Life</span>
+                    <span class="block text-neutral-500">in Print</span>
+                </h1>
+                
+                <!-- Subtitle -->
+                <p class="text-lg md:text-xl text-neutral-400 max-w-xl mb-10 opacity-0 animate-fade-in-up delay-200">
+                    Oman's trusted printing partner since 2005. From business cards to large format banners, we deliver exceptional quality with fast turnaround.
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-wrap gap-4 opacity-0 animate-fade-in-up delay-300">
+                    <a href="#services" class="bg-lime-500 text-black px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-wider hover:bg-lime-300 transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(132,204,22,0.5)]">
+                        Explore Services
+                    </a>
+                    <a href="#contact" class="border border-white/20 text-white px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-wider hover:border-lime-500/50 hover:text-lime-400 transition-all backdrop-blur-sm">
+                        Request Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Badge -->
+        <div class="absolute bottom-12 right-12 animate-float opacity-0 animate-fade-in-scale delay-500 hidden lg:block">
+            <div class="bg-neutral-900/80 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center">
+                <div class="text-4xl font-bold text-lime-500 mb-1">18+</div>
+                <div class="text-xs text-neutral-400 uppercase tracking-wider">Years Experience</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Clients Bar -->
+    <section class="py-16 border-y border-white/5 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-xs uppercase tracking-widest text-neutral-500 text-center mb-8">Trusted by leading businesses in Oman</p>
+            <div class="flex justify-center items-center gap-12 md:gap-20 flex-wrap opacity-40">
+                <span class="text-xl md:text-2xl font-bold tracking-tighter">OMAN AIR</span>
+                <span class="text-xl md:text-2xl font-bold tracking-tighter">PDO</span>
+                <span class="text-xl md:text-2xl font-bold tracking-tighter">OOREDoo</span>
+                <span class="text-xl md:text-2xl font-bold tracking-tighter">BANK MUSCAT</span>
+                <span class="text-xl md:text-2xl font-bold tracking-tighter">SHELL</span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="py-24 md:py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Section Header -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-20 reveal-on-scroll">
+                <div class="lg:col-span-5">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-lime-500 mb-4 block">Our Services</span>
+                    <h2 class="text-4xl md:text-5xl font-semibold leading-tight tracking-tighter uppercase">
+                        Complete Printing Solutions
+                    </h2>
+                </div>
+                <div class="lg:col-span-7 flex items-end">
+                    <p class="text-lg text-neutral-400 max-w-2xl">
+                        From concept to completion, we offer comprehensive printing services tailored to your business needs. Quality materials, cutting-edge technology, and expert craftsmanship.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <div class="service-card group relative bg-neutral-900/50 border border-white/5 rounded-3xl overflow-hidden hover:border-lime-500/30 transition-all duration-500 reveal-on-scroll">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://picsum.photos/seed/business-cards/600/450.jpg" alt="Business Cards" class="service-image w-full h-full object-cover opacity-70 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-semibold">Business Cards</h3>
+                            <span class="iconify text-lime-500 text-2xl" data-icon="lucide:credit-card"></span>
+                        </div>
+                        <p class="text-neutral-400 mb-6">Premium quality business cards with various finishes - matte, glossy, embossed, and foil stamped options.</p>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-lime-400 text-sm font-semibold hover:gap-3 transition-all">
+                            Get Started <span class="iconify" data-icon="lucide:arrow-right"></span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card group relative bg-neutral-900/50 border border-white/5 rounded-3xl overflow-hidden hover:border-lime-500/30 transition-all duration-500 reveal-on-scroll delay-100">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://picsum.photos/seed/banners-print/600/450.jpg" alt="Banners & Signage" class="service-image w-full h-full object-cover opacity-70 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-semibold">Banners & Signage</h3>
+                            <span class="iconify text-lime-500 text-2xl" data-icon="lucide:maximize-2"></span>
+                        </div>
+                        <p class="text-neutral-400 mb-6">Eye-catching large format printing for outdoor and indoor signage, roll-ups, and promotional banners.</p>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-lime-400 text-sm font-semibold hover:gap-3 transition-all">
+                            Get Started <span class="iconify" data-icon="lucide:arrow-right"></span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card group relative bg-neutral-900/50 border border-white/5 rounded-3xl overflow-hidden hover:border-lime-500/30 transition-all duration-500 reveal-on-scroll delay-200">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://picsum.photos/seed/brochures/600/450.jpg" alt="Brochures & Flyers" class="service-image w-full h-full object-cover opacity-70 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-semibold">Brochures & Flyers</h3>
+                            <span class="iconify text-lime-500 text-2xl" data-icon="lucide:layout"></span>
+                        </div>
+                        <p class="text-neutral-400 mb-6">Professional marketing materials in various sizes and folds. Perfect for promotions and corporate communications.</p>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-lime-400 text-sm font-semibold hover:gap-3 transition-all">
+                            Get Started <span class="iconify" data-icon="lucide:arrow-right"></span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card group relative bg-neutral-900/50 border border-white/5 rounded-3xl overflow-hidden hover:border-lime-500/30 transition-all duration-500 reveal-on-scroll">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://picsum.photos/seed/corporate-stationery/600/450.jpg" alt="Corporate Stationery" class="service-image w-full h-full object-cover opacity-70 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-semibold">Corporate Stationery</h3>
+                            <span class="iconify text-lime-500 text-2xl" data-icon="lucide:file-text"></span>
+                        </div>
+                        <p class="text-neutral-400 mb-6">Letterheads, envelopes, invoices, and complete corporate identity packages for your business.</p>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-lime-400 text-sm font-semibold hover:gap-3 transition-all">
+                            Get Started <span class="iconify" data-icon="lucide:arrow-right"></span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card group relative bg-neutral-900/50 border border-white/5 rounded-3xl overflow-hidden hover:border-lime-500/30 transition-all duration-500 reveal-on-scroll delay-100">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://picsum.photos/seed/stickers-labels/600/450.jpg" alt="Stickers & Labels" class="service-image w-full h-full object-cover opacity-70 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-semibold">Stickers & Labels</h3>
+                            <span class="iconify text-lime-500 text-2xl" data-icon="lucide:sticker"></span>
+                        </div>
+                        <p class="text-neutral-400 mb-6">Custom stickers, product labels, and decals in any shape or size. Waterproof and durable options available.</p>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-lime-400 text-sm font-semibold hover:gap-3 transition-all">
+                            Get Started <span class="iconify" data-icon="lucide:arrow-right"></span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card group relative bg-neutral-900/50 border border-white/5 rounded-3xl overflow-hidden hover:border-lime-500/30 transition-all duration-500 reveal-on-scroll delay-200">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://picsum.photos/seed/gifts-merchandise/600/450.jpg" alt="Gifts & Merchandise" class="service-image w-full h-full object-cover opacity-70 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-semibold">Gifts & Merchandise</h3>
+                            <span class="iconify text-lime-500 text-2xl" data-icon="lucide:gift"></span>
+                        </div>
+                        <p class="text-neutral-400 mb-6">Customized promotional items, mugs, pens, bags, and corporate gifts with your branding.</p>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-lime-400 text-sm font-semibold hover:gap-3 transition-all">
+                            Get Started <span class="iconify" data-icon="lucide:arrow-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About / Stats Section -->
+    <section id="about" class="py-24 md:py-32 relative overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute top-1/4 left-0 w-64 h-64 bg-lime-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 right-0 w-96 h-96 bg-lime-500/5 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Content -->
+                <div class="reveal-on-scroll">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-lime-500 mb-4 block">About MIP Ruwi</span>
+                    <h2 class="text-4xl md:text-5xl font-semibold leading-tight tracking-tighter uppercase mb-6">
+                        Your Trusted Partner in Print Since 2005
+                    </h2>
+                    <p class="text-lg text-neutral-400 mb-8">
+                        Located in the heart of Ruwi, Muscat, MIP has been serving businesses across Oman with premium printing solutions. Our commitment to quality, timely delivery, and customer satisfaction has made us the preferred choice for corporations, SMEs, and government organizations.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-lime-500/20 flex items-center justify-center shrink-0">
+                                <span class="iconify text-lime-500 text-2xl" data-icon="lucide:check-circle"></span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Premium Quality</h4>
+                                <p class="text-sm text-neutral-500">State-of-the-art printing technology</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-lime-500/20 flex items-center justify-center shrink-0">
+                                <span class="iconify text-lime-500 text-2xl" data-icon="lucide:clock"></span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Fast Turnaround</h4>
+                                <p class="text-sm text-neutral-500">Express delivery options available</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-lime-500/20 flex items-center justify-center shrink-0">
+                                <span class="iconify text-lime-500 text-2xl" data-icon="lucide:palette"></span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Custom Solutions</h4>
+                                <p class="text-sm text-neutral-500">Tailored to your requirements</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-lime-500/20 flex items-center justify-center shrink-0">
+                                <span class="iconify text-lime-500 text-2xl" data-icon="lucide:headphones"></span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Expert Support</h4>
+                                <p class="text-sm text-neutral-500">Dedicated customer service team</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center gap-2 bg-lime-500 text-black px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-wider hover:bg-lime-300 transition-all hover:scale-105">
+                        Contact Us Today <span class="iconify" data-icon="lucide:arrow-right"></span>
+                    </a>
+                </div>
+                
+                <!-- Stats -->
+                <div class="relative">
+                    <div class="bg-neutral-900/50 backdrop-blur-xl border border-white/5 rounded-3xl p-10 reveal-on-scroll delay-100">
+                        <h3 class="text-xl font-semibold mb-8">Our Achievements</h3>
+                        <div class="space-y-8">
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-neutral-400">Projects Completed</span>
+                                    <span class="text-2xl font-bold text-lime-500">15,000+</span>
+                                </div>
+                                <div class="h-1 bg-neutral-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-lime-500 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-neutral-400">Happy Clients</span>
+                                    <span class="text-2xl font-bold text-lime-500">3,500+</span>
+                                </div>
+                                <div class="h-1 bg-neutral-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-lime-500 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-neutral-400">Years of Excellence</span>
+                                    <span class="text-2xl font-bold text-lime-500">18+</span>
+                                </div>
+                                <div class="h-1 bg-neutral-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-lime-500 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-neutral-400">Client Satisfaction</span>
+                                    <span class="text-2xl font-bold text-lime-500">99%</span>
+                                </div>
+                                <div class="h-1 bg-neutral-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-lime-500 rounded-full" style="width: 99%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Element -->
+                    <div class="absolute -bottom-6 -right-6 bg-lime-500 text-black rounded-2xl p-6 glow-lime animate-float">
+                        <div class="text-3xl font-bold">24/7</div>
+                        <div class="text-sm font-medium">Support Available</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Process Section -->
+    <section class="py-24 md:py-32 bg-neutral-900/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal-on-scroll">
+                <span class="text-xs font-semibold uppercase tracking-widest text-lime-500 mb-4 block">Our Process</span>
+                <h2 class="text-4xl md:text-5xl font-semibold leading-tight tracking-tighter uppercase">
+                    How It Works
+                </h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center reveal-on-scroll">
+                    <div class="w-16 h-16 rounded-2xl bg-lime-500/20 flex items-center justify-center mx-auto mb-6 relative">
+                        <span class="text-2xl font-bold text-lime-500">01</span>
+                        <div class="absolute -right-20 top-1/2 w-20 h-px bg-gradient-to-r from-lime-500/50 to-transparent hidden md:block"></div>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Submit Request</h3>
+                    <p class="text-neutral-400 text-sm">Share your printing requirements via our form, email, or visit our store.</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="text-center reveal-on-scroll delay-100">
+                    <div class="w-16 h-16 rounded-2xl bg-lime-500/20 flex items-center justify-center mx-auto mb-6 relative">
+                        <span class="text-2xl font-bold text-lime-500">02</span>
+                        <div class="absolute -right-20 top-1/2 w-20 h-px bg-gradient-to-r from-lime-500/50 to-transparent hidden md:block"></div>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Get Quote</h3>
+                    <p class="text-neutral-400 text-sm">Receive a detailed quote with pricing and turnaround time within 24 hours.</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="text-center reveal-on-scroll delay-200">
+                    <div class="w-16 h-16 rounded-2xl bg-lime-500/20 flex items-center justify-center mx-auto mb-6 relative">
+                        <span class="text-2xl font-bold text-lime-500">03</span>
+                        <div class="absolute -right-20 top-1/2 w-20 h-px bg-gradient-to-r from-lime-500/50 to-transparent hidden md:block"></div>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Approve Design</h3>
+                    <p class="text-neutral-400 text-sm">Review and approve the digital proof before we begin production.</p>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="text-center reveal-on-scroll delay-300">
+                    <div class="w-16 h-16 rounded-2xl bg-lime-500 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-black">04</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Receive Order</h3>
+                    <p class="text-neutral-400 text-sm">Pick up at our store or get it delivered to your doorstep across Oman.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-24 md:py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16 reveal-on-scroll">
+                <div class="lg:col-span-5">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-lime-500 mb-4 block">Portfolio</span>
+                    <h2 class="text-4xl md:text-5xl font-semibold leading-tight tracking-tighter uppercase">
+                        Recent Projects
+                    </h2>
+                </div>
+                <div class="lg:col-span-7 flex items-end">
+                    <p class="text-lg text-neutral-400 max-w-2xl">
+                        Explore our latest work showcasing the quality and variety of printing solutions we deliver to businesses across Oman.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Portfolio Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="md:col-span-2 reveal-on-scroll">
+                    <div class="relative aspect-[16/9] rounded-2xl overflow-hidden group">
+                        <img src="https://picsum.photos/seed/corporate-branding/1200/675.jpg" alt="Corporate Branding" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6">
+                            <span class="text-xs uppercase tracking-wider text-lime-400 mb-2 block">Corporate Identity</span>
+                            <h3 class="text-2xl font-semibold">Bank Muscat Annual Report</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal-on-scroll delay-100">
+                    <div class="relative aspect-[16/9] md:aspect-auto md:h-full rounded-2xl overflow-hidden group">
+                        <img src="https://picsum.photos/seed/event-banners/600/600.jpg" alt="Event Banners" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6">
+                            <span class="text-xs uppercase tracking-wider text-lime-400 mb-2 block">Event Printing</span>
+                            <h3 class="text-xl font-semibold">Muscat Festival Banners</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal-on-scroll delay-200">
+                    <div class="relative aspect-[16/9] rounded-2xl overflow-hidden group">
+                        <img src="https://picsum.photos/seed/product-catalog/600/340.jpg" alt="Product Catalog" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6">
+                            <span class="text-xs uppercase tracking-wider text-lime-400 mb-2 block">Catalogs</span>
+                            <h3 class="text-xl font-semibold">Oman Oil Product Catalog</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-2 reveal-on-scroll delay-300">
+                    <div class="relative aspect-[16/9] rounded-2xl overflow-hidden group">
+                        <img src="https://picsum.photos/seed/vehicle-branding/1200/675.jpg" alt="Vehicle Branding" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6">
+                            <span class="text-xs uppercase tracking-wider text-lime-400 mb-2 block">Vehicle Branding</span>
+                            <h3 class="text-2xl font-semibold">Ooredoo Fleet Branding</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="py-24 md:py-32 bg-neutral-900/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal-on-scroll">
+                <span class="text-xs font-semibold uppercase tracking-widest text-lime-500 mb-4 block">Testimonials</span>
+                <h2 class="text-4xl md:text-5xl font-semibold leading-tight tracking-tighter uppercase">
+                    What Our Clients Say
+                </h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="bg-neutral-900/50 border border-white/5 rounded-3xl p-8 hover:border-lime-500/30 transition-all duration-500 reveal-on-scroll">
+                    <div class="flex gap-1 mb-6">
+                        <span class="iconify text-lime-500 text-xl" data-icon="lucide:star"></span>
+                        <span class="iconify text-lime-500 text-xl" data-icon="lucide:star"></span>
+                        <span class="iconify text-lime-500 text-xl" data-icon="lucide:star"></span>
+                        <span class="iconify text-lime-500 text-xl" data-icon="lucide:star"></span>
+                        <span class="iconify text-lime-500 text-xl" data-icon="lucide:star"></span>
+                    </div>
+                    <p class="text-neutral-300 mb-6">"MIP Ruwi has been our go-to printing partner for 5 years. Their quality is exceptional and delivery is always on time. Highly recommended for any business printing needs."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-lime-500/20 flex items-center justify-center">
+                            <span class="text-lime-500 font-bold">SA</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Salim Al-Balushi</h4>
+                            <p class="text-sm text-neutral-500">Marketing Director, Oman Air</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-neutral-900/50 border border-white/5 rounded-3xl p-8 hover:border-lime-500/30 transition-all duration-500 reveal-on-scroll delay-100">
+                    <div class="flex gap-1 mb-6">
+                        <span class="iconify text-lime-500 text-xl" data-icon="lucide:star"></span>
+                        <span class="iconify text-lime-500 text-xl" data-icon="lucide:star"></span>
+                        <span class="iconify text-lime-500 text-xl" data-icon="lucide:star"></span>
+                        <span class="iconify text-lime-500 text-xl" data-icon="lucide:star"></span>
+                        <span class="iconify text-lime-500 text-xl" data-icon="lucide:star"></span>
+                    </div>
+                    <p class="text-neutral-300 mb-6">"The team at MIP went above and beyond for our annual report printing. Professional service, competitive pricing, and the print quality exceeded our expectations."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-lime-500/20 flex items-center justify-center">
+                            <span class="text-lime-500 font-bold">FK</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Fatima Al-Khan</h4>
+                            <p class="text-sm text-neutral-500">Communications Lead, PDO</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-neutral-900/50 border border-white/5 rounded-3xl p-8 hover:border-lime-500/30 transition-all duration-500 reveal-on-scroll delay-200">
+                    <div class="flex gap-1 mb-6">
+                        <span class="iconify text-lime-500 text-xl" data-icon="lucide:star"></span>
+                        <span class="iconify text-lime-500 text-xl" data-icon="lucide:star"></span>
+                        <span class="iconify text-lime-500 text-xl" data-icon="lucide:star"></span>
+                        <span class="iconify text-lime-500 text-xl" data-icon="lucide:star"></span>
+                        <span class="iconify text-lime-500 text-xl" data-icon="lucide:star"></span>
+                    </div>
+                    <p class="text-neutral-300 mb-6">"From business cards to large banners, MIP handles everything flawlessly. Their design team even helped us refine our branding. Outstanding service every time."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-lime-500/20 flex items-center justify-center">
+                            <span class="text-lime-500 font-bold">AH</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Ahmed Al-Habsi</h4>
+                            <p class="text-sm text-neutral-500">Owner, Al-Habsi Trading</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 md:py-32 relative overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-lime-500/10 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Info -->
+                <div class="reveal-on-scroll">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-lime-500 mb-4 block">Contact Us</span>
+                    <h2 class="text-4xl md:text-5xl font-semibold leading-tight tracking-tighter uppercase mb-6">
+                        Let's Start Your Project
+                    </h2>
+                    <p class="text-lg text-neutral-400 mb-10">
+                        Ready to bring your ideas to life? Get in touch with our team for a free consultation and quote.
+                    </p>
+                    
+                    <div class="space-y-6 mb-10">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-lime-500/20 flex items-center justify-center shrink-0">
+                                <span class="iconify text-lime-500 text-2xl" data-icon="lucide:map-pin"></span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Visit Our Store</h4>
+                                <p class="text-neutral-400">Al Ruwi Street, Ruwi<br>Muscat, Sultanate of Oman</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-lime-500/20 flex items-center justify-center shrink-0">
+                                <span class="iconify text-lime-500 text-2xl" data-icon="lucide:phone"></span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Call Us</h4>
+                                <p class="text-neutral-400">+968 2412 3456<br>+968 9876 5432</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-lime-500/20 flex items-center justify-center shrink-0">
+                                <span class="iconify text-lime-500 text-2xl" data-icon="lucide:mail"></span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Email Us</h4>
+                                <p class="text-neutral-400">info@mipruwi.com<br>quotes@mipruwi.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-lime-500/20 flex items-center justify-center shrink-0">
+                                <span class="iconify text-lime-500 text-2xl" data-icon="lucide:clock"></span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Working Hours</h4>
+                                <p class="text-neutral-400">Saturday - Thursday: 8:00 AM - 9:00 PM<br>Friday: 4:00 PM - 9:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="flex gap-4">
+                        <a href="#" class="w-12 h-12 rounded-xl bg-neutral-800 flex items-center justify-center hover:bg-lime-500 hover:text-black transition-all">
+                            <span class="iconify text-xl" data-icon="lucide:instagram"></span>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-xl bg-neutral-800 flex items-center justify-center hover:bg-lime-500 hover:text-black transition-all">
+                            <span class="iconify text-xl" data-icon="lucide:facebook"></span>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-xl bg-neutral-800 flex items-center justify-center hover:bg-lime-500 hover:text-black transition-all">
+                            <span class="iconify text-xl" data-icon="lucide:twitter"></span>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-xl bg-neutral-800 flex items-center justify-center hover:bg-lime-500 hover:text-black transition-all">
+                            <span class="iconify text-xl" data-icon="lucide:linkedin"></span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="reveal-on-scroll delay-200">
+                    <form class="bg-neutral-900/50 border border-white/5 rounded-3xl p-8 md:p-10">
+                        <h3 class="text-2xl font-semibold mb-6">Request a Quote</h3>
+                        <div class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="text-sm text-neutral-400 mb-2 block">Full Name *</label>
+                                    <input type="text" placeholder="Your name" class="w-full bg-neutral-800 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:border-lime-500 transition-colors">
+                                </div>
+                                <div>
+                                    <label class="text-sm text-neutral-400 mb-2 block">Company</label>
+                                    <input type="text" placeholder="Company name" class="w-full bg-neutral-800 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:border-lime-500 transition-colors">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="text-sm text-neutral-400 mb-2 block">Email *</label>
+                                    <input type="email" placeholder="your@email.com" class="w-full bg-neutral-800 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:border-lime-500 transition-colors">
+                                </div>
+                                <div>
+                                    <label class="text-sm text-neutral-400 mb-2 block">Phone *</label>
+                                    <input type="tel" placeholder="+968 XXXX XXXX" class="w-full bg-neutral-800 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:border-lime-500 transition-colors">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-sm text-neutral-400 mb-2 block">Service Required *</label>
+                                <select class="w-full bg-neutral-800 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-lime-500 transition-colors">
+                                    <option value="">Select a service</option>
+                                    <option value="business-cards">Business Cards</option>
+                                    <option value="banners">Banners & Signage</option>
+                                    <option value="brochures">Brochures & Flyers</option>
+                                    <option value="stationery">Corporate Stationery</option>
+                                    <option value="stickers">Stickers & Labels</option>
+                                    <option value="merchandise">Gifts & Merchandise</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-sm text-neutral-400 mb-2 block">Project Details *</label>
+                                <textarea rows="4" placeholder="Describe your printing requirements..." class="w-full bg-neutral-800 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:border-lime-500 transition-colors resize-none"></textarea>
+                            </div>
+                            <div>
+                                <label class="text-sm text-neutral-400 mb-2 block">Quantity (if known)</label>
+                                <input type="text" placeholder="e.g., 500 business cards" class="w-full bg-neutral-800 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:border-lime-500 transition-colors">
+                            </div>
+                            <button type="submit" class="w-full bg-lime-500 text-black py-4 rounded-full text-sm font-semibold uppercase tracking-wider hover:bg-lime-300 transition-all hover:scale-105 flex items-center justify-center gap-2">
+                                Submit Request
+                                <span class="iconify" data-icon="lucide:send"></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Map Section -->
+    <section class="h-96 relative">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.4500977405647!2d58.5879!3d23.5883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDM1JzE3LjkiTiA1OMKwMzUnMTYuNCJF!5e0!3m2!1sen!2som!4v1629789234567!5m2!1sen!2som" width="100%" height="100%" style="border:0; filter: grayscale(100%) invert(92%) contrast(83%);" allowfullscreen="" loading="lazy"></iframe>
+        <div class="absolute inset-0 bg-gradient-to-t from-#030303 to-transparent pointer-events-none"></div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-16 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <!-- Brand -->
+                <div class="md:col-span-2">
+                    <a href="#" class="text-3xl font-bold tracking-tighter uppercase text-white mb-4 block">
+                        MIP<span class="text-lime-500">.</span>
+                    </a>
+                    <p class="text-neutral-400 max-w-sm mb-6">
+                        Premium printing services in Oman since 2005. Quality, reliability, and excellence in every print.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center hover:bg-lime-500 hover:text-black transition-all">
+                            <span class="iconify" data-icon="lucide:instagram"></span>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center hover:bg-lime-500 hover:text-black transition-all">
+                            <span class="iconify" data-icon="lucide:facebook"></span>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center hover:bg-lime-500 hover:text-black transition-all">
+                            <span class="iconify" data-icon="lucide:linkedin"></span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xs font-semibold uppercase tracking-widest mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="text-neutral-400 hover:text-lime-400 transition-colors">Services</a></li>
+                        <li><a href="#about" class="text-neutral-400 hover:text-lime-400 transition-colors">About Us</a></li>
+                        <li><a href="#portfolio" class="text-neutral-400 hover:text-lime-400 transition-colors">Portfolio</a></li>
+                        <li><a href="#contact" class="text-neutral-400 hover:text-lime-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="text-xs font-semibold uppercase tracking-widest mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#contact" class="text-neutral-400 hover:text-lime-400 transition-colors">Business Cards</a></li>
+                        <li><a href="#contact" class="text-neutral-400 hover:text-lime-400 transition-colors">Banners & Signage</a></li>
+                        <li><a href="#contact" class="text-neutral-400 hover:text-lime-400 transition-colors">Brochures & Flyers</a></li>
+                        <li><a href="#contact" class="text-neutral-400 hover:text-lime-400 transition-colors">Corporate Stationery</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-neutral-500">© 2024 MIP Ruwi. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-sm text-neutral-500 hover:text-lime-400 transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-sm text-neutral-500 hover:text-lime-400 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/96898765432" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-40">
+        <span class="iconify text-white text-3xl" data-icon="lucide:message-circle"></span>
+    </a>
+    
+    <script>
+        // Parallax Effect for Hero Background
+        const heroBg = document.getElementById('heroBg');
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            if (heroBg) {
+                heroBg.style.transform = `translateY(${scrollY * 0.3}px)`;
+            }
+        });
+        
+        // Reveal on Scroll Animation
+        const revealElements = document.querySelectorAll('.reveal-on-scroll');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        revealElements.forEach(el => revealObserver.observe(el));
+        
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Form Submission Handler
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We will get back to you within 24 hours.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
